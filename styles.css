@@ -156,9 +156,9 @@ body::after {
 
 /* Prompt text */
 .folder-prompt {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'DM Serif Display', Georgia, serif;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   font-size: clamp(1.4rem, 3.5vw, 2.2rem);
   color: var(--pink-baby);
   margin-bottom: 2.5rem;
@@ -168,7 +168,7 @@ body::after {
   user-select: none;
   position: relative;
   z-index: 2;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 @keyframes promptFadeIn {
@@ -884,19 +884,44 @@ body::after {
 }
 
 /* ---------- RESPONSIVE ---------- */
+
+/* --- Large tablets & small laptops (1024px) --- */
+@media (max-width: 1024px) {
+  .polaroid-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.3rem;
+    max-width: 900px;
+  }
+
+  .family-grid {
+    max-width: 850px;
+  }
+
+  .congrats-text-container {
+    max-width: 600px;
+  }
+}
+
+/* --- Tablets (768px) --- */
 @media (max-width: 768px) {
   .polaroid-grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.2rem;
+    padding: 0.5rem;
   }
 
   .polaroid img {
     height: 260px;
   }
 
+  .polaroid {
+    padding: 8px 8px 40px 8px;
+  }
+
   .family-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 180px;
+    gap: 0.8rem;
   }
 
   .family-photo.span-2-col {
@@ -905,9 +930,20 @@ body::after {
 
   .congrats-text-container {
     padding: 1.5rem 1.2rem;
+    max-width: 90vw;
+  }
+
+  .congrats-text {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.75;
   }
 
   .page-section {
+    padding: 2rem 1rem 5rem;
+  }
+
+  .page-gallery,
+  .page-family {
     padding: 2rem 1rem 5rem;
   }
 
@@ -916,16 +952,133 @@ body::after {
     padding: 0.6rem 1.2rem;
     gap: 1rem;
   }
+
+  .folder-container {
+    width: 200px;
+    height: 160px;
+  }
+
+  .folder__back {
+    width: 176px;
+    height: 140px;
+  }
+
+  .folder__back::after {
+    width: 52px;
+    height: 18px;
+    border-radius: 9px 9px 0 0;
+  }
+
+  .folder-prompt {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin-bottom: 2rem;
+  }
+
+  .gallery-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+  }
+
+  .family-title {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+  }
+
+  .finale-message {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+  }
+
+  .finale-author {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+  }
+
+  /* Decorative blobs — smaller on tablets */
+  .page-congrats::before,
+  .page-congrats::after,
+  .page-gallery::before,
+  .page-gallery::after,
+  .page-family::before {
+    width: 250px;
+    height: 250px;
+  }
+
+  #landing-screen::before {
+    width: 200px;
+    height: 200px;
+  }
+
+  #landing-screen::after {
+    width: 160px;
+    height: 160px;
+  }
 }
 
+/* --- Small tablets & large phones (600px) --- */
+@media (max-width: 600px) {
+  .congrats-title {
+    font-size: clamp(2.5rem, 12vw, 4.5rem);
+  }
+
+  .congrats-hero-photo {
+    width: clamp(240px, 75vw, 400px);
+    height: clamp(280px, 80vw, 460px);
+    border-radius: 140px 140px 16px 16px;
+  }
+
+  .polaroid-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .polaroid img {
+    height: 200px;
+  }
+
+  .polaroid-caption {
+    font-size: 0.95rem;
+  }
+
+  .family-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 160px;
+  }
+
+  .divider-line {
+    width: 40px;
+  }
+}
+
+/* --- Phones (480px) --- */
 @media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .page-section {
+    padding: 1.5rem 0.8rem 5rem;
+  }
+
   .polaroid-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .polaroid img {
+    height: 280px;
+  }
+
+  .polaroid {
+    padding: 6px 6px 36px 6px;
   }
 
   .family-grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: 200px;
+    grid-auto-rows: 220px;
+    gap: 0.8rem;
+  }
+
+  .family-photo.span-2-col {
+    grid-column: span 1;
   }
 
   .family-photo.span-2-row {
@@ -934,7 +1087,312 @@ body::after {
 
   .congrats-hero-photo {
     width: 85vw;
-    height: 90vw;
+    height: 95vw;
+    border-radius: 120px 120px 14px 14px;
+    border-width: 3px;
+  }
+
+  .congrats-date {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+  }
+
+  .congrats-title {
+    font-size: clamp(2.2rem, 14vw, 3.5rem);
+  }
+
+  .congrats-subtitle {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .congrats-text-container {
+    padding: 1.2rem 1rem;
+    border-radius: 16px;
+  }
+
+  .congrats-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .gallery-title {
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+  }
+
+  .gallery-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .family-title {
+    font-size: clamp(1.8rem, 10vw, 3rem);
+  }
+
+  .family-subtitle {
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    margin-bottom: 1.2rem;
+  }
+
+  .finale-heart {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    margin-bottom: 1.2rem;
+  }
+
+  .finale-message {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .finale-author {
+    font-size: clamp(1.1rem, 5vw, 1.6rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .finale-date {
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+  }
+
+  .finale-infinity {
+    font-size: 1.4rem;
+  }
+
+  .btn-restart {
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+  }
+
+  .page-nav {
+    bottom: 0.8rem;
+    padding: 0.5rem 1rem;
+    gap: 0.8rem;
+  }
+
+  .nav-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .nav-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .folder-container {
+    width: 170px;
+    height: 140px;
+  }
+
+  .folder__back {
+    width: 150px;
+    height: 120px;
+    border-radius: 0 16px 16px 16px;
+  }
+
+  .folder__back::after {
+    width: 44px;
+    height: 16px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .paper {
+    border-radius: 16px;
+  }
+
+  .folder__front {
+    border-radius: 8px 16px 16px 16px;
+  }
+
+  .folder-prompt {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .divider {
+    margin: 1.2rem 0;
+    gap: 0.6rem;
+  }
+
+  .divider-line {
+    width: 35px;
+  }
+
+  .divider-heart {
+    font-size: 0.7rem;
+  }
+
+  /* Hide decorative blobs on small screens */
+  .page-congrats::before,
+  .page-congrats::after,
+  .page-gallery::before,
+  .page-gallery::after,
+  .page-family::before,
+  .page-finale::before {
+    display: none;
+  }
+
+  #landing-screen::before,
+  #landing-screen::after {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* --- Very small phones (360px and below) --- */
+@media (max-width: 360px) {
+  html {
+    font-size: 14px;
+  }
+
+  .page-section {
+    padding: 1.2rem 0.6rem 4.5rem;
+  }
+
+  .congrats-hero-photo {
+    width: 90vw;
+    height: 100vw;
+    border-radius: 100px 100px 12px 12px;
+  }
+
+  .congrats-title {
+    font-size: clamp(2rem, 15vw, 3rem);
+  }
+
+  .polaroid-grid {
+    max-width: 280px;
+  }
+
+  .polaroid img {
+    height: 240px;
+  }
+
+  .folder-container {
+    width: 150px;
+    height: 120px;
+  }
+
+  .folder__back {
+    width: 130px;
+    height: 104px;
+  }
+
+  .folder__back::after {
+    width: 38px;
+    height: 14px;
+  }
+}
+
+/* --- Landscape phones --- */
+@media (max-height: 500px) and (orientation: landscape) {
+  #landing-screen {
+    padding: 1rem;
+  }
+
+  .folder-prompt {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .folder-container {
+    width: 140px;
+    height: 110px;
+  }
+
+  .folder__back {
+    width: 120px;
+    height: 96px;
+  }
+
+  .folder__back::after {
+    width: 36px;
+    height: 12px;
+  }
+
+  .page-section {
+    min-height: auto;
+    padding: 1.5rem 1rem 4rem;
+  }
+
+  .congrats-hero-photo {
+    width: 200px;
+    height: 240px;
+  }
+
+  .page-nav {
+    bottom: 0.5rem;
+  }
+}
+
+/* --- Safe area support (notched phones) --- */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .page-nav {
+    padding-bottom: calc(0.8rem + env(safe-area-inset-bottom));
+  }
+
+  .page-section {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* --- Touch device optimizations --- */
+@media (hover: none) and (pointer: coarse) {
+  .polaroid:hover {
+    transform: rotate(var(--rotation, 0deg));
+    box-shadow: var(--shadow-photo);
+    z-index: auto;
+  }
+
+  .family-photo:hover {
+    transform: none;
+  }
+
+  .family-photo:hover img {
+    transform: none;
+  }
+
+  .nav-arrow:hover {
+    background: transparent;
+    border-color: var(--pink-warm);
+    transform: none;
+  }
+
+  /* Larger tap targets for touch */
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .nav-dot {
+    min-width: 28px;
+    min-height: 28px;
+    padding: 10px;
+    background-clip: content-box;
+  }
+
+  .folder-container {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-restart {
+    min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* --- Prefer reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .folder-prompt {
+    opacity: 1;
   }
 }
 
