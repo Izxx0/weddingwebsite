@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       onComplete: () => {
         landingScreen.style.display = 'none';
         mainContent.style.display = 'block';
+        document.body.classList.add('no-scroll');
         pageNav.classList.add('visible');
         showPage(1, 'none');
         isAnimating = false;
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (direction === 'none') {
       gsap.set(targetPage, { opacity: 1, x: 0 });
       animatePageContent(pageNum);
-      window.scrollTo(0, 0);
+      mainContent.scrollTo(0, 0);
       return;
     }
 
@@ -156,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         onComplete: () => {
           isAnimating = false;
           animatePageContent(pageNum);
-          window.scrollTo(0, 0);
+          mainContent.scrollTo(0, 0);
         }
       }
     );
@@ -421,6 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
       onComplete: () => {
         mainContent.style.display = 'none';
         mainContent.style.opacity = '1';
+        document.body.classList.remove('no-scroll');
         pageNav.classList.remove('visible');
 
         // Reset landing

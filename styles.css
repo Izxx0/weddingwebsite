@@ -71,6 +71,12 @@ body {
   line-height: 1.7;
 }
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -330,7 +336,10 @@ body::after {
   display: none;
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* ---------- PAGE SECTIONS ---------- */
@@ -360,7 +369,6 @@ body::after {
   text-align: center;
   justify-content: center;
   padding-top: 2.5rem;
-  min-height: 100vh;
 }
 
 /* Soft decorative shapes on congrats page */
