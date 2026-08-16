@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С Днём Свадьбы, Андрей и Динара!</title>
+  <meta name="description" content="Поздравление с 3-й годовщиной свадьбы Андрея и Динары от Рустама">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       LANDING SCREEN — THE FOLDER
+       ============================================================ -->
+  <div id="landing-screen">
+
+    <!-- Prompt text -->
+    <p class="folder-prompt">
+      Нажми на эту папку!
+    </p>
+
+    <!-- React Bits Folder -->
+    <div class="folder-container" id="folder" role="button" aria-label="Открыть поздравление" tabindex="0">
+      <div class="folder">
+        <div class="folder__back">
+          <div class="paper paper-1"></div>
+          <div class="paper paper-2"></div>
+          <div class="paper paper-3"></div>
+          <div class="folder__front"></div>
+          <div class="folder__front right"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================
+       MAIN CONTENT — PAGES
+       ============================================================ -->
+  <main id="main-content">
+
+    <!-- Confetti canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- ==================== PAGE 1: CONGRATULATION ==================== -->
+    <section class="page-section page-congrats" id="page-1" data-page="1">
+
+      <div class="congrats-date">12 августа 2023 &mdash; 12 августа 2026</div>
+
+      <h1 class="congrats-title">С Днём<br>Свадьбы!</h1>
+
+      <p class="congrats-subtitle">Ровно 3 года вместе</p>
+
+      <img
+        class="congrats-hero-photo"
+        src="assets/photos/couple/photo_2026-08-16_02-49-14.jpg"
+        alt="Андрей и Динара"
+        loading="eager"
+      >
+
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-heart">&#9829;</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <div class="congrats-text-container">
+        <p class="congrats-text">
+          Дорогие Андрей и Динара! Я поздравляю вас с днём свадьбы, вашим днём! В тот день вы невероятно сияли и выглядели просто волшебно и отпадно, и я надеюсь, что вы будете такими же большую часть времени!
+        </p>
+        <div class="divider">
+          <span class="divider-line"></span>
+          <span class="divider-heart">&#9829;</span>
+          <span class="divider-line"></span>
+        </div>
+        <p class="congrats-text">
+          Ровно три года прошло с того дня, а я до сих пор вспоминаю тот день, когда я узнал о том, что Андрей сделал тебе предложение (ну или ты сделал предложение Динаре...). Вспоминаю, как я был за вас рад, вспоминаю то, как мы ехали всеми родственниками к вам в Челябинск и то, как было весело жить в том коттедже.
+        </p>
+        <div class="divider">
+          <span class="divider-line"></span>
+          <span class="divider-heart">&#9829;</span>
+          <span class="divider-line"></span>
+        </div>
+        <p class="congrats-text">
+          А сам день свадьбы был просто шикарен: офигенное место, офигенные люди, офигенная программа, офигенная еда и, конечно же, офигенные ВЫ! Большое спасибо вам за этот день, тогда были счастливы не только вы, но и все присутствующие на свадьбе!
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ==================== PAGE 2: GALLERY (COUPLE) ==================== -->
+    <section class="page-section page-gallery" id="page-2" data-page="2">
+
+      <h2 class="gallery-title">Андрей &amp; Динара</h2>
+      <p class="gallery-subtitle">Самые тёплые моменты</p>
+
+      <div class="polaroid-grid">
+
+        <div class="polaroid">
+          <img src="assets/photos/couple/photo_2023-08-13_12-41-04.jpg" alt="Андрей и Динара">
+          <span class="polaroid-caption">Бенгальские огни</span>
+        </div>
+
+        <div class="polaroid">
+          <img src="assets/photos/couple/photo_2026-08-16_04-56-41.jpg" alt="Андрей и Динара">
+          <span class="polaroid-caption">Торт</span>
+        </div>
+
+        <div class="polaroid">
+          <img src="assets/photos/couple/DSCN1539.JPG" alt="Андрей и Динара">
+          <span class="polaroid-caption">Вместе</span>
+        </div>
+
+        <div class="polaroid">
+          <img src="assets/photos/couple/DSCN1541.JPG" alt="Андрей и Динара">
+          <span class="polaroid-caption">Счастье</span>
+        </div>
+
+        <div class="polaroid">
+          <img src="assets/photos/couple/DSCN1881.JPG" alt="Андрей и Динара">
+          <span class="polaroid-caption">Любовь</span>
+        </div>
+
+        <div class="polaroid">
+          <img src="assets/photos/andrey/DSCN1479.JPG" alt="Андрей">
+          <span class="polaroid-caption">Андрей</span>
+        </div>
+
+        <div class="polaroid">
+          <img src="assets/photos/andrey/DSCN1877.JPG" alt="Андрей">
+          <span class="polaroid-caption">Жених</span>
+        </div>
+
+        <div class="polaroid">
+          <img src="assets/photos/dinara/DSCN1602.JPG" alt="Динара">
+          <span class="polaroid-caption">Динара</span>
+        </div>
+
+        <div class="polaroid">
+          <img src="assets/photos/dinara/DSCN1814.JPG" alt="Динара">
+          <span class="polaroid-caption">Невеста</span>
+        </div>
+
+        <div class="polaroid">
+          <img src="assets/photos/couple/photo_2026-08-16_02-49-14.jpg" alt="Андрей и Динара">
+          <span class="polaroid-caption">На закате</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== PAGE 3: FAMILY ==================== -->
+    <section class="page-section page-family" id="page-3" data-page="3">
+
+      <h2 class="family-title">Семья</h2>
+      <p class="family-subtitle">Самые близкие люди</p>
+
+      <div class="family-grid">
+
+        <div class="family-photo span-2-col">
+          <img src="assets/photos/family/DSCN1442.JPG" alt="Семья">
+        </div>
+
+        <div class="family-photo span-2-row">
+          <img src="assets/photos/family/DSCN1837.JPG" alt="Семья">
+        </div>
+
+        <div class="family-photo">
+          <img src="assets/photos/family/DSCN1847.JPG" alt="Семья">
+        </div>
+
+        <div class="family-photo">
+          <img src="assets/photos/family/DSCN1865.JPG" alt="Семья">
+        </div>
+
+        <div class="family-photo span-2-col">
+          <img src="assets/photos/family/DSCN1884.JPG" alt="Семья">
+        </div>
+
+        <div class="family-photo">
+          <img src="assets/photos/family/DSCN1904.JPG" alt="Семья">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== PAGE 4: FINALE ==================== -->
+    <section class="page-section page-finale" id="page-4" data-page="4">
+
+      <div class="finale-heart" id="finale-heart-icon">&#9829;</div>
+
+      <h2 class="finale-message">Счастья вам,<br>мои дорогие!</h2>
+
+      <p class="finale-author">С любовью, Рустам</p>
+
+      <p class="finale-date">12.08.2023 &mdash; <span class="finale-infinity">&#8734;</span></p>
+
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-heart">&#9829;</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <button class="btn-restart" id="btn-restart">Начать сначала</button>
+
+    </section>
+
+    <!-- Navigation -->
+    <nav class="page-nav" id="page-nav">
+      <button class="nav-arrow" id="nav-prev" aria-label="Назад">&#8592;</button>
+      <div class="nav-dots">
+        <button class="nav-dot active" data-target="1" aria-label="Страница 1"></button>
+        <button class="nav-dot" data-target="2" aria-label="Страница 2"></button>
+        <button class="nav-dot" data-target="3" aria-label="Страница 3"></button>
+        <button class="nav-dot" data-target="4" aria-label="Страница 4"></button>
+      </div>
+      <button class="nav-arrow" id="nav-next" aria-label="Далее">&#8594;</button>
+    </nav>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
