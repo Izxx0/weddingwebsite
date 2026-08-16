@@ -336,7 +336,6 @@ body::after {
 /* ---------- PAGE SECTIONS ---------- */
 .page-section {
   width: 100%;
-  min-height: 100vh;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -361,6 +360,7 @@ body::after {
   text-align: center;
   justify-content: center;
   padding-top: 2.5rem;
+  min-height: 100vh;
 }
 
 /* Soft decorative shapes on congrats page */
